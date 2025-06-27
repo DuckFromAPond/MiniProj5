@@ -1,0 +1,16 @@
+services: 
+  node: 
+    restart: always
+    build: .
+    ports: 
+      - 80:5002 
+    volumes: 
+      - ./:/code 
+  mongo: 
+    image: mongo 
+    ports: 
+      - 27017:27017
+    volumes: 
+      - mongodb:/data/db
+volumes: 
+  mongodb: 
